@@ -18,11 +18,12 @@ constructor({id, choreName, choreDOW, user}){
   choreData(){
     this.li.innerHTML += `
       <div>
+      <p>
         <h3> ${this.userf} ${this.userl}</h3>
-        <p>
+
           <h4> ${this.choreName} </h4>
           <h5> ${this.choreDOW} </h5>
-        </p>
+      </p>
       </div>
     `
     return this.li
@@ -32,5 +33,6 @@ constructor({id, choreName, choreDOW, user}){
     Chore.chore_container.append(this.choreData())
   }
 
+  
 
 }
