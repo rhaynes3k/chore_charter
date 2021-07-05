@@ -2,12 +2,13 @@ class Chore {
   // remember objects
   static all = []
   static chore_container = document.getElementById('chore_table_container')
-constructor({id, choreName, choreDOW, user}){
+constructor({id, choreName, choreDOW, user_id}){
   this.id = id
   this.choreName = choreName
   this.choreDOW = choreDOW
-  this.userf = user.fName
-  this.userl = user.lName
+  this.user_id = user_id
+  // this.userf = user.fName
+  // this.userl = user.lName
 
   this.li = document.createElement('li')
   this.li.id = this.id
@@ -19,7 +20,7 @@ constructor({id, choreName, choreDOW, user}){
     this.li.innerHTML += `
       <div>
       <p>
-        <h3> ${this.userf} ${this.userl}</h3>
+        <h3> ${this.user_id} ${this.userl}</h3>
 
           <h4> ${this.choreName} </h4>
           <h5> ${this.choreDOW} </h5>
@@ -33,6 +34,6 @@ constructor({id, choreName, choreDOW, user}){
     Chore.chore_container.append(this.choreData())
   }
 
-  
+
 
 }

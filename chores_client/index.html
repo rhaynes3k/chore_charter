@@ -4,6 +4,19 @@
     <meta charset="utf-8">
     <title></title>
   </head>
+  <style media="screen">
+
+    table {
+      width: 100%
+    }
+    td, th, tr {
+      border: 3px solid #00FFFF
+    }
+    th {
+      padding: 5px
+    }
+
+  </style>
   <body>
 
     <div id="form_container">
@@ -13,9 +26,22 @@
     <div id="user_table_container">
 
     </div>
-
+<hr>
     <div id="chore_table_container">
+      <table id='table-chore'>
+        <thead>
+          <tr>
+            <th>Chorer</th>
+            <th>Chore</th>
+            <th>Day of the Week</th>
+          </tr>
+        </thead>
 
+        <tbody id= 'data'>
+
+        </tbody>
+
+      </table>
     </div>
 
     <script src = "src/chore.js" type="text/javascript"> </script>

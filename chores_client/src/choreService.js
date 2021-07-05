@@ -12,7 +12,7 @@ class ChoreService{
     .then(chores => {
       for(const chore of chores){
         let c = new Chore(chore)
-        console.log(c)
+        // console.log(c)
         c.domDisplay()
         }
 
