@@ -16,31 +16,29 @@ constructor(id, fName, lName, age, chores){
   this.li.id = this.id
 
   User.all.push(this)
-
-  }
-
-  userData(){
-    this.li.innerHTML += `
-      <div id='${this.id}-chores'>
-        <h2> ${this.fName}</h2>
-      </div>
-    `
-    this.chores.forEach(c =>{
-      this.li.innerHTML +=`
-      <h3> ${c.choreName} </h3>
-      <h5> ${c.choreDOW} </h5>
-      `
-    })
-
-    return this.li
-  }
+//debugger
 
 
-  domDisplay(){
-    // User.user_container.append(this.userData())
-    makeTable(this.userData())
+  // userData(){
+  //   this.li.innerHTML += `
+  //     <div id='${this.id}-chores'>
+  //       <h2> ${this.fName}</h2>
+  //     </div>
+  //   `
+  //   this.chores.forEach(c =>{
+  //     this.li.innerHTML +=`
+  //     <h3> ${c.choreName} </h3>
+  //     <h5> ${c.choreDOW} </h5>
+  //     `
+  //   })
+  //
+  //   return this.li
   }
 }
+
+  //makeTable()
+    // User.user_container.append(this.userData())
+//}
 
 
 // this.chores.forEach(c =>{

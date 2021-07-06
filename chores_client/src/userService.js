@@ -9,32 +9,66 @@ class UserService{
 
       for(const u of users){
         let userNew = new User(u)
-        console.log(userNew)
-        
+        // console.log(userNew.id)
+
 //debugger
-        userNew.domDisplay()
+        makeTable(userNew.id)
+        userList()
       }
 
     })
   }
 
-  // getUser(){
-  //   fetch(`${this.endpoint}/users/5`)
-  //   .then(resp => resp.json())
-  //   .then(users => {
-  //     // console.log(users)
-  //       let uSer = new User(users)
-  //       console.log(uSer)
-  //       let userLi = document.createElement('li')
-  //       // for(const chr of Chore.all){
-  //       //   let newChore = new Chore(chr)
-  //       userLi.append(uSer.id.fName)
-  //         userLi.append(uSer.id.lName)
-  //         // userUi.append(userLi)
-  //         // console.log(userLi)
-  //         let user_spot = document.getElementById('user_table_container')
-  //         user_spot.append(userLi)
-  //   })
-  // }
+
+  addUser() {
+    let user = {
+      fName: document.getElementById('fname').value,
+      lName: document.getElementById('lname').value,
+      age: document.getElementById('age').value
+    }
+
+    fetch(`${this.endpoint}/users`,
+    {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    Accept: 'application/json'
+      },
+    body: JSON.stringify(user)
+    })
+    .then(response => response.json())
+    .then(response => {
+      console.log(response)
+
+    })
+    .catch(function(error) {
+      alert("WHOA!");
+    })
+  }
+
+  addChore() {
+    let chore = {
+      choreName: document.getElementById('chore').value,
+      choreDOW: document.getElementById('dow').value,
+      user_id: document.getElementById('chr-user').value
+    }
+    fetch(`${this.endpoint}/chores`,
+    {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    Accept: 'application/json'
+      },
+    body: JSON.stringify(chore)
+    })
+    .then(response => response.json())
+    .then(response => {
+      console.log(response)
+      makeTable(response)
+    })
+    .catch(function(error) {
+      alert("WHOA!");
+    })
+  }
 
 }

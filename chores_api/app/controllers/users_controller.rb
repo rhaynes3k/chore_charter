@@ -1,6 +1,12 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :update, :destroy]
 
+  def new
+    user = User.new
+
+    render json: user.to_json
+  end
+
   # GET /users
   def index
     users = User.all
