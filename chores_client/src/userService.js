@@ -41,6 +41,7 @@ class UserService{
   }
 
   delUser(user) {
+    alert('Are you sure?')
     return fetch(`${this.endpoint}/users/${user}`,
     {
     method: 'DELETE'
