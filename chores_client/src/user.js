@@ -16,23 +16,6 @@ constructor(id, fName, lName, age, chores){
   this.li.id = this.id
 
   User.all.push(this)
-//debugger
-
-
-  // userData(){
-  //   this.li.innerHTML += `
-  //     <div id='${this.id}-chores'>
-  //       <h2> ${this.fName}</h2>
-  //     </div>
-  //   `
-  //   this.chores.forEach(c =>{
-  //     this.li.innerHTML +=`
-  //     <h3> ${c.choreName} </h3>
-  //     <h5> ${c.choreDOW} </h5>
-  //     `
-  //   })
-  //
-  //   return this.li
   }
 }
 

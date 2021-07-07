@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :update, :destroy]
+  #before_action :set_user, only: [:show, :update, :destroy]
 
   def new
     user = User.new
@@ -42,6 +42,7 @@ class UsersController < ApplicationController
 
   # DELETE /users/1
   def destroy
+    user = User.find(params[:id])
     user.destroy
   end
 

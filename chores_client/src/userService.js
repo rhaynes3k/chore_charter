@@ -9,16 +9,11 @@ class UserService{
 
       for(const u of users){
         let userNew = new User(u)
-        // console.log(userNew.id)
-
-//debugger
-        makeTable(userNew.id)
-        userList()
       }
-
+      userList()
+      makeTable()
     })
   }
-
 
   addUser() {
     let user = {
@@ -26,7 +21,7 @@ class UserService{
       lName: document.getElementById('lname').value,
       age: document.getElementById('age').value
     }
-
+    console.log(user)
     fetch(`${this.endpoint}/users`,
     {
     method: 'POST',
@@ -39,36 +34,19 @@ class UserService{
     .then(response => response.json())
     .then(response => {
       console.log(response)
+      userList()
+      location.reload()
+    })
 
-    })
-    .catch(function(error) {
-      alert("WHOA!");
-    })
   }
 
-  addChore() {
-    let chore = {
-      choreName: document.getElementById('chore').value,
-      choreDOW: document.getElementById('dow').value,
-      user_id: document.getElementById('chr-user').value
-    }
-    fetch(`${this.endpoint}/chores`,
+  delUser(user) {
+    return fetch(`${this.endpoint}/users/${user}`,
     {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    Accept: 'application/json'
-      },
-    body: JSON.stringify(chore)
+    method: 'DELETE'
     })
     .then(response => response.json())
-    .then(response => {
-      console.log(response)
-      makeTable(response)
-    })
-    .catch(function(error) {
-      alert("WHOA!");
-    })
+    .then(location.reload())
   }
 
 }

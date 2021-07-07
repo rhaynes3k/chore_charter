@@ -18,4 +18,32 @@ class ChoreService{
 
     })
   }
+
+
+addChore() {
+  let chore = {
+    choreName: document.getElementById('chore').value,
+    choreDOW: document.getElementById('dow').value,
+    user_id: document.getElementById('chr-user').value
+  }
+  fetch(`${this.endpoint}/chores`,
+  {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  Accept: 'application/json'
+    },
+  body: JSON.stringify(chore)
+  })
+  .then(response => response.json())
+  .then(response => {
+    console.log(response)
+  })
+  
+  // .catch(function(error) {
+  //   alert("WHOA!");
+  // })
+}
+
+
 }

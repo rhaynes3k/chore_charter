@@ -4,43 +4,39 @@ const userService = new UserService(base_url)
 
 window.addEventListener('DOMContentLoaded', (event) => {
   userService.getUsers()
-  // choreService.getChores()
+  makeTable()
+  userList()
 })
-// userService.getUser()
-function makeTable(users) {
 
-  //debugger
+function makeTable(users) {
   const tableBody = document.getElementById('data')
   let data = ''
   for(const user of User.all){
-    console.log(user)
-          user.id.chores.map(u =>{
-            console.log(u)
-            data +=  `
-              <tr> <td> ${user.id.fName} </td> <td> ${u.choreName} </td> <td> ${user.id.chores[0].choreDOW} </td> </tr>
-            `
-    })
-
-
-
-
+  console.log(user)
+    data +=  `
+      <tr>
+        <td> <a href='#' onclick='userService.delUser(${user.id.id})'>${user.id.fName}</a> </td>
+        <td> ${user.chores.map(u =>`${u.choreName}`)} </td>
+        <td> ${user.chores.map(u =>`${u.choreDOW}`)} </td>
+      </tr>
+    `
  }
   tableBody.innerHTML = data
 }
-let btnDiv = document.getElementById('btn-user')
+
 let newUser = document.getElementById('new-user')
 newUser.addEventListener('submit', ()=>{
   event.preventDefault()
   userService.addUser()
-//  addUser()
 })
 
 let newChore = document.getElementById('chore-form')
 newChore.addEventListener('submit', ()=>{
   event.preventDefault()
   console.log('chore me')
-  userService.addChore()
-//  addUser()
+  choreService.addChore()
+  makeTable()
+  location.reload()
 })
 
 function userList() {
@@ -51,6 +47,5 @@ function userList() {
     opt.value = u.id.id
     let selForm = document.getElementById('chr-user')
     selForm.append(opt)
-
   })
 }
