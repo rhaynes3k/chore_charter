@@ -33,7 +33,11 @@ class UserService{
     })
     .then(response => response.json())
     .then(response => {
+      //debugger
+      for(let e in response){
+        `${e}`
       console.log(response)
+    }
       userList()
       location.reload()
     })
@@ -41,13 +45,16 @@ class UserService{
   }
 
   delUser(user) {
-    alert('Are you sure?')
+    if (confirm('Are you sure you want to delte this user?')== true){
     return fetch(`${this.endpoint}/users/${user}`,
-    {
-    method: 'DELETE'
-    })
-    .then(response => response.json())
-    .then(location.reload())
+      {
+        method: 'DELETE'
+      })
+      .then(response => response.json())
+      .then(location.reload())
+    } else {
+        alert("Deletion Cancelled")
+    }
   }
 
 }

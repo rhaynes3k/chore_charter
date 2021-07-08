@@ -12,7 +12,6 @@ function makeTable(users) {
   const tableBody = document.getElementById('data')
   let data = ''
   for(const user of User.all){
-  console.log(user)
     data +=  `
       <tr>
         <td> <a href='#' onclick='userService.delUser(${user.id.id})'>${user.id.fName}</a> </td>

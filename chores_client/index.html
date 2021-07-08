@@ -2,12 +2,13 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Chore-ture Chart</title>
   </head>
-  <style media="screen">
 
+  <style media="screen">
     table {
-      width: 100%
+      width: 100%;
+      text-align: center;
     }
     td, th, tr {
       border: 3px solid #00FFFF
@@ -15,23 +16,26 @@
     th {
       padding: 5px
     }
-
+    tr:nth-child(even) {
+      background-color: #00Ffff
+    }
+    td {
+      
+    }
   </style>
+
   <body>
-
-    <div id="form_container">
-
+    <div id="title" style='text-align: center'>
+      <h1> Chore-ture </h1>
     </div>
 
-    <div id="user_table_container">
-
-    </div>
 <hr>
+
     <div id="chore_table_container">
       <table id='table-chore'>
         <thead>
           <tr>
-            <th>Chorer</th>
+            <th>Chorerbearer</th>
             <th>Chore</th>
             <th>Day of the Week</th>
           </tr>
@@ -82,25 +86,11 @@
 
         </select>
         <br />
-        <input id='chore'
-          type="text"
-          name="choreName"
-
-          placeholder="Enter Chore Name..."
-        />
+        <input id='chore' type="text" name="choreName" placeholder="Enter Chore Name..." />
         <br />
-        <input id='dow'
-          type="text"
-          name="choreDOW"
-
-          placeholder="Enter Chore Day..."
-        />
+        <input id='dow' type="text" name="choreDOW" placeholder="Enter Chore Day..." />
         <br />
-        <input
-          type="submit"
-          name="submit"
-          value="Create New Chore"
-        />
+        <input type="submit" name="submit" value="Create New Chore" />
       </form>
     </div>
 
