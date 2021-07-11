@@ -36,14 +36,19 @@ addChore() {
   body: JSON.stringify(chore)
   })
   .then(response => response.json())
-  .then(response => {
-    console.log(response)
+  .then(result => {
+    console.log(Object.values(result).length)
+    console.log(result)
+    if(Object.values(result).length < 4){
+      Object.values(result).forEach(e =>{
+       alert(e)
+       console.log(e)
+      })
+    }
+  location.reload()
   })
-  
-  // .catch(function(error) {
-  //   alert("WHOA!");
-  // })
+  .catch((error) => {
+  console.error('Error:', error);
+  })
 }
-
-
 }

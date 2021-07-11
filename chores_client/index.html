@@ -6,21 +6,51 @@
   </head>
 
   <style media="screen">
+    body{
+      font-family: fantasy;
+      font-weight: bold;
+      background-color: lightgray
+    }
     table {
       width: 100%;
       text-align: center;
+      border-collapse:collapse;
+      background-color: aliceBlue
     }
     td, th, tr {
-      border: 3px solid #00FFFF
+      border: 3px solid;
+      font-size: 18px;
     }
-    th {
-      padding: 5px
+    th{
+      padding: 15px;
+      font-size: 30px
     }
-    tr:nth-child(even) {
-      background-color: #00Ffff
+    #formatter{
+      width: 100%;
+      border: 3px solid black;
+      padding-bottom: 200px;
+      background-color: aliceBlue
     }
-    td {
-      
+    #btn-user{
+      float: left;
+      width: 33%;
+
+
+    }
+    #selector{
+      float: left;
+      width: 33%;
+
+
+    }
+    #c-form{
+      float: left;
+      width: 33%;
+
+    }
+
+    h6{
+      color: yellowgreen
     }
   </style>
 
@@ -44,55 +74,65 @@
         <tbody id= 'data'>
 
         </tbody>
-
       </table>
-    </div>
-    <div id="btn-user">
-      <form id="new-user">
-        <h3>New User Form</h3>
+      <h6>Click name to delete</h6>
+      <div id="formatter">
 
-        <input id='fname'
-          type="text"
-          name="fName"
+        <div id="selector">
+          <h3>Choose Chart Color</h3>
+          <select id="sel-color" name="table-color" value='choose'>
 
-          placeholder="Enter User First Name..."
-        />
-        <br />
-        <input id='lname'
-          type="text"
-          name="lName"
+          </select>
+        </div>
 
-          placeholder="Enter User Last Name..."
-        />
-        <br />
-        <input id='age'
-          type="text"
-          name="user id"
 
-          placeholder="Enter User Age..."
-        />
+        <div id="btn-user">
+          <form id="new-user">
+            <h3>New User Form</h3>
+            <input id='fname'
+              type="text"
+              name="fName"
+              placeholder="Enter User First Name..."
+            />
+            <br />
+            <input id='lname'
+              type="text"
+              name="lName"
+              placeholder="Enter User Last Name..."
+            />
+            <br />
+            <input id='age'
+              type="text"
+              name="user id"
+              placeholder="Enter User Age..."
+            />
+            </br>
+            <input
+              type="submit"
+              name="submit"
+              value="Create New User"
+            />
+          </form>
+        </div>
 
-        <input
-          type="submit"
-          name="submit"
-          value="Create New User"
-        />
-      </form>
-    </div>
+        <div id="c-form">
+          <h3>New Chore Form</h3>
+          <form id="chore-form">
+            <select id="chr-user" name="chore-user">
+
+            </select>
+            <br />
+            <input id='chore' type="text" name="choreName" placeholder="Enter Chore Name..." />
+            <br />
+            <input id='dow' type="text" name="choreDOW" placeholder="Enter Chore Day..." />
+            <br />
+            <input type="submit" name="submit" value="Create New Chore" />
+          </form>
+        </div>
+
+      </div>
+
 </br>
-    <div id="c-form">
-      <form id="chore-form">
-        <select id="chr-user" name="chore-user">
-
-        </select>
-        <br />
-        <input id='chore' type="text" name="choreName" placeholder="Enter Chore Name..." />
-        <br />
-        <input id='dow' type="text" name="choreDOW" placeholder="Enter Chore Day..." />
-        <br />
-        <input type="submit" name="submit" value="Create New Chore" />
-      </form>
-    </div>
 
     <script src = "src/chore.js" type="text/javascript"> </script>
     <script src = "src/choreService.js" type="text/javascript"> </script>

@@ -32,14 +32,19 @@ class UserService{
     body: JSON.stringify(user)
     })
     .then(response => response.json())
-    .then(response => {
-      //debugger
-      for(let e in response){
-        `${e}`
-      console.log(response)
-    }
-      userList()
-      location.reload()
+    .then(result => {
+      console.log(Object.values(result).length)
+      console.log(result)
+      if(Object.values(result).length < 4){
+        Object.values(result).forEach(e =>{
+         alert(e)
+         console.log(e)
+        })
+      }
+      // location.reload()
+    })
+    .catch((error) => {
+//      console.error('Error:', error);
     })
 
   }
