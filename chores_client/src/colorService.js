@@ -3,8 +3,23 @@ class ColorService{
     this.endpoint = endpoint
   }
   getColor(){
-    
+    console.log("I've been HIT!!!")
+    fetch(`${this.endpoint}/colors`)
+    .then(response => response.json())
+    .then(result =>{
+      console.log(result[result.length-1].colorPic)
+      let permColor = result[result.length-1].colorPic
+      // let newColor = new Color(colorPic)
+      for(var c=0;c<chart.length;c++){
+        chart[c].style.backgroundColor = permColor
+      }
+      for(var c=0;c<chartHead.length;c++){
+        chartHead[c].style.backgroundColor = permColor
+      }
+        panel.style.background = permColor
+    })
   }
+
   addColor() {
     console.log("HIT ME!!")
     let colorPic = {
@@ -26,14 +41,7 @@ class ColorService{
     .then(result => {
       console.log("I'm back baby!!!")
       console.log(result.colorPic)
-      for(var c=0;c<chart.length;c++){
-        chart[c].style.backgroundColor = result.colorPic
-      }
-      for(var c=0;c<chartHead.length;c++){
-        chartHead[c].style.backgroundColor = result.colorPic
-      }
-        panel.style.background = result.colorPic
-
+      colorService.getColor()
     })
     .catch((error) => {
     console.log('Error:', error);

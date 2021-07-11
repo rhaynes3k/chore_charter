@@ -1,0 +1,3 @@
+[submodule "chores_client"]
+	path = chores_client
+	url = https://github.com/rhaynes3k/choreChart/chores_client

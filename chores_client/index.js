@@ -5,13 +5,13 @@ const userService = new UserService(base_url)
 const chart = document.getElementsByTagName('TD')
 const chartHead = document.getElementsByTagName('TH')
 const panel = document.getElementById('formatter')
-let selColor = document.getElementById('sel-color')
+const selColor = document.getElementById('sel-color')
 
 window.addEventListener('DOMContentLoaded', (event) => {
   userService.getUsers()
   makeTable()
   userList()
-  // colorSet()
+  colorService.getColor()
 })
 
 function makeTable(users) {
@@ -210,6 +210,7 @@ function userList() {
     selColor.append(colr)
     })
 })()
+
 
 
       // console.log(this.selcolor)
