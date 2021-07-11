@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_27_232253) do
+ActiveRecord::Schema.define(version: 2021_07_11_194117) do
 
   create_table "chores", force: :cascade do |t|
     t.string "choreName"
@@ -20,15 +20,8 @@ ActiveRecord::Schema.define(version: 2021_06_27_232253) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "days_of_the_weeks", force: :cascade do |t|
-    t.string "monday"
-    t.string "tuesday"
-    t.string "wednesday"
-    t.string "thursday"
-    t.string "friday"
-    t.string "saturday"
-    t.string "sunday"
-    t.integer "chore_id"
+  create_table "colors", force: :cascade do |t|
+    t.string "colorPic"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -1,5 +1,3 @@
-let choreUi = document.createElement('ul')
-
 class ChoreService{
   constructor(endpoint){
     this.endpoint = endpoint
@@ -26,6 +24,7 @@ addChore() {
     choreDOW: document.getElementById('dow').value,
     user_id: document.getElementById('chr-user').value
   }
+  
   fetch(`${this.endpoint}/chores`,
   {
   method: 'POST',
@@ -48,7 +47,7 @@ addChore() {
   location.reload()
   })
   .catch((error) => {
-  console.error('Error:', error);
+  console.log('Error:', error);
   })
 }
 }

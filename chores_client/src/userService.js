@@ -41,7 +41,7 @@ class UserService{
          console.log(e)
         })
       }
-      // location.reload()
+      location.reload()
     })
     .catch((error) => {
 //      console.error('Error:', error);

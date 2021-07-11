@@ -1,5 +1,6 @@
 const base_url = 'http://127.0.0.1:3000'
 const choreService = new ChoreService(base_url)
+const colorService = new ColorService(base_url)
 const userService = new UserService(base_url)
 const chart = document.getElementsByTagName('TD')
 const chartHead = document.getElementsByTagName('TH')
@@ -10,8 +11,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
   userService.getUsers()
   makeTable()
   userList()
-  chartColor()
-  colorSet()
+  // colorSet()
 })
 
 function makeTable(users) {
@@ -51,10 +51,11 @@ function userList() {
     let selForm = document.getElementById('chr-user')
     selForm.prepend(opt)
     selForm.selectedIndex = selForm.length.fName
+    console.log(selForm.selectedIndex)
   })
 }
 
-function chartColor() {
+(function chartColor() {
   let colors =
     [
       "AliceBlue",
@@ -202,22 +203,13 @@ function chartColor() {
     let selColor = document.getElementById('sel-color')
     colors.forEach(c =>{
     let colr = document.createElement('option')
-    colr.id = c
+    colr.id = c.count
+    console.log(colors[10])
     colr.innerHTML = c
     colr.value = c
     selColor.append(colr)
     })
-}
+})()
 
-function colorSet() {
-  selColor.addEventListener('change', ()=>{
-    console.log('clicked', event.target.value)
-    for(var c=0;c<chart.length;c++){
-      chart[c].style.backgroundColor = event.target.value
-    }
-    for(var c=0;c<chartHead.length;c++){
-      chartHead[c].style.backgroundColor = event.target.value
-    }
-      panel.style.background = event.target.value
-  })
-}
+
+      // console.log(this.selcolor)

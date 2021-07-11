@@ -30,9 +30,9 @@ constructor({id, choreName, choreDOW, user_id}){
     return this.li
   }
 
-  domDisplay(){
-    Chore.chore_container.append(this.choreData())
-  }
+  // domDisplay(){
+  //   Chore.chore_container.append(this.choreData())
+  // }
 
 
 
