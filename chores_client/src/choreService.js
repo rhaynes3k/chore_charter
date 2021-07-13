@@ -21,10 +21,10 @@ class ChoreService{
 addChore() {
   let chore = {
     choreName: document.getElementById('chore').value,
-    choreDOW: document.getElementById('dow').value,
+    choreDOW: document.getElementById('dow').value.toLowerCase(),
     user_id: document.getElementById('chr-user').value
   }
-  
+console.log(chore)
   fetch(`${this.endpoint}/chores`,
   {
   method: 'POST',

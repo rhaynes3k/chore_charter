@@ -11,7 +11,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
   userService.getUsers()
   makeTable()
   userList()
-  colorService.getColor()
 })
 
 function makeTable(users) {
@@ -204,13 +203,8 @@ function userList() {
     colors.forEach(c =>{
     let colr = document.createElement('option')
     colr.id = c.count
-    console.log(colors[10])
     colr.innerHTML = c
     colr.value = c
     selColor.append(colr)
     })
 })()
-
-
-
-      // console.log(this.selcolor)

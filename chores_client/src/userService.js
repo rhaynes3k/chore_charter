@@ -12,6 +12,8 @@ class UserService{
       }
       userList()
       makeTable()
+      colorService.getColor()
+
     })
   }
 
@@ -33,8 +35,6 @@ class UserService{
     })
     .then(response => response.json())
     .then(result => {
-      console.log(Object.values(result).length)
-      console.log(result)
       if(Object.values(result).length < 4){
         Object.values(result).forEach(e =>{
          alert(e)
